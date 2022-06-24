@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,200&display=swap"
+        rel="stylesheet">
+    <title>APP Clima</title>
+</head>
+
+<body onload="onload()">
+
+    <div class="parent fondoNegro2">
+        <div class="div1">
+            <div id="location"></div>
+            <div class="datos">
+                <div class="fino" id="date"></div>
+                <div class="fino" id="hours"></div>
+            </div>
+        </div>
+
+        <div class="div2 b-1">
+            <div class="tempe">
+                <div class="svgimg" id="temperature"></div>
+                <div class="temp">°</div>
+            </div>
+            <div class="simbolos">
+                <img class="svgimg" id="icono-animado" src="" alt="">
+                <img class="svgimg1" id="icono-animado-dos" src="" alt="">
+            </div>
+        </div>
+        <div class="div3">
+            <div id="description"></div>
+            <div class="termica">
+                <div class=" finoUno">Sensación térmica</div>
+                <div class=" info" id="feels_like"></div>
+                <div class="">°</div>
+            </div>
+        </div>
+        <div class="div4 fondoNegro">
+            <div class="centrado">
+                <div class="iconoTwo">
+                    <object data="animated/thermometer.png"></object>
+                </div>
+                <div class="tempThree fino center">Max. - Min.</div>
+                <div class="information-container">
+                    <div id="temp_max"></div>
+                    <div class="tempThree " id="temp_max">°</div>
+                    <div class="tempFour info">/</div>
+                    <div class="info tempThree" id="temp_min"></div>
+                    <div class="tempThree" id="temp_min">°</div>
+                </div>
+            </div>
+        </div>
+        <div class="div5 fondoNegro">
+            <div class="centrado">
+                <div class="iconoTwo">
+                    <object data="animated/nubelluviaicono.png"></object>
+                </div>
+                <div class="tempThree fino center">Nubosidad</div>
+                <div class="information-container">
+                    <div class="info tempThree" id="clouds"></div>
+                    <div class="info tempThree">%</div>
+                </div>
+            </div>
+        </div>
+        <div class="div6 fondoNegro">
+            <div class="centrado">
+                <div class="iconoTwo movlat">
+                    <object data="animated/nubesmov.png"></object>
+                </div>
+                <div class="tempThree fino center">Viento</div>
+                <div class="information-container">
+                    <div class="info tempThree" id="wind"></div>
+                    <div class="info tempThree">km/h</div>
+                </div>
+            </div>
+        </div>
+        <div class="div7 fondoNegro">
+            <div class="centrado">
+                <div class="iconoTwo">
+                    <object data="animated/drop.png"></object>
+                </div>
+                <div class="tempThree fino center">Humedad</div>
+                <div class="information-container">
+                    <div class="info tempThree" id="humidity"></div>
+                    <div class="info tempThree">%</div>
+                </div>
+            </div>
+        </div>
+        <div class="div8 fondoNegro">
+            <div class="centrado">
+                <div class="iconoTwo">
+                    <object data="animated/atmospheric.png"></object>
+                </div>
+                <div class="tempThree fino center">Presión</div>
+                <div class="information-container">
+                    <div class="info tempThree" id="pressure"></div>
+                    <div class="info tempThree">hPa</div>
+                </div>
+            </div>
+        </div>
+        <div class="div9 fondoNegro">
+            <div class="centrado">
+                <div class="iconoTwo">
+                    <object data="animated/view.png"></object>
+                </div>
+                <div class="tempThree fino center">Visibilidad</div>
+                <div class="information-container">
+                    <div class="info tempThree" id="visibility"></div>
+                    <div class="info tempThree">Km</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="div23">
+            <h3 class="center">Proximas 24 Hs</h3>
+        </div>
+
+        <div class="div10 fondoNegro">
+            <div class="centrado div2">
+                <div class="tempe">
+                    <div class="size-m" id="hora-uno"></div>
+                    <div class="info">hs</div>
+                </div>
+                <div class="simTwo">
+                    <img class="svgimg" id="icono-animado-tres" src="" alt="">
+                </div>
+            </div>
+            <div class="center">
+                <div class="tempe info">
+                    <div id="temperatureUno"></div>
+                    <div>°</div>
+                </div>
+                <div id="descriptionUno"></div>
+            </div>
+        </div>
+
+        <div class="div11 fondoNegro">
+            <div class="centrado div2">
+                <div class="tempe">
+                    <div id="hora-dos"></div>
+                    <div class="info">hs</div>
+                </div>
+                <div class="simTwo">
+                    <img class="svgimg" id="icono-animado-cuatro" src="" alt="">
+                </div>
+            </div>
+            <div class="center">
+                <div class="tempe info">
+                    <div id="temperatureDos"></div>
+                    <div>°</div>
+                </div>
+                <div id="descriptionDos"></div>
+            </div>
+        </div>
+
+        <div class="div12 fondoNegro">
+            <div class="centrado div2">
+                <div class="tempe">
+                    <div id="hora-tres"></div>
+                    <div class="info">hs</div>
+                </div>
+                <div class="simTwo">
+                    <img class="svgimg" id="icono-animado-cinco" src="" alt="">
+                </div>
+            </div>
+            <div class="center">
+                <div class="tempe info">
+                    <div id="temperatureTres"></div>
+                    <div>°</div>
+                </div>
+                <div id="descriptionTres"></div>
+            </div>
+        </div>
+
+        <div class="div13 fondoNegro">
+            <div class="centrado div2">
+                <div class="tempe">
+                    <div id="hora-cuatro"></div>
+                    <div class="info">hs</div>
+                </div>
+                <div class="simTwo">
+                    <img class="svgimg" id="icono-animado-seis" src="" alt="">
+                </div>
+            </div>
+            <div class="center">
+                <div class="tempe info">
+                    <div id="temperatureCuatro"></div>
+                    <div>°</div>
+                </div>
+                <div id="descriptionCuatro"></div>
+            </div>
+        </div>
+
+        <div class="div14 fondoNegro">
+            <div class="centrado div2">
+                <div class="tempe">
+                    <div id="hora-cinco"></div>
+                    <div class="info">hs</div>
+                </div>
+                <div class="simTwo">
+                    <img class="svgimg" id="icono-animado-siete" src="" alt="">
+                </div>
+            </div>
+            <div class="center">
+                <div class="tempe info">
+                    <div id="temperatureCinco"></div>
+                    <div>°</div>
+                </div>
+                <div id="descriptionCinco"></div>
+            </div>
+        </div>
+
+        <div class="div15 fondoNegro">
+            <div class="centrado div2">
+                <div class="tempe">
+                    <div id="hora-seis"></div>
+                    <div class="info">hs</div>
+                </div>
+                <div class="simTwo">
+                    <img class="svgimg" id="icono-animado-ocho" src="" alt="">
+                </div>
+            </div>
+            <div class="center">
+                <div class="tempe info">
+                    <div id="temperatureSeis"></div>
+                    <div>°</div>
+                </div>
+                <div id="descriptionSeis"></div>
+            </div>
+        </div>
+
+        <div class="div24">
+            <h3 class="center">Proximos 7 días</h3>
+        </div>
+
+        <div class="div16 fondoNegro">
+            <div class="m-l" id="dia-dos"></div>
+            <br>
+            <div class="disFlexRow">
+                <div class="termica info">
+                    <div class="iconoThree">
+                        <object data="animated/thermometer.png"></object>
+                    </div>
+                    <div id="temp_max2"></div>
+                    <div class="mb-5" id="temp_max">°</div>
+                    <div class=" info">/</div>
+                    <div class="info" id="temp_min2"></div>
+                    <div class="mb-5" id="temp_min">°</div>
+                </div>
+                <div class="termica info">
+                    <div class="iconoThree">
+                        <object data="animated/nubelluviaicono.png"></object>
+
+                    </div>
+                    <div class="info m-top" id="clouds_dia_dos"></div>
+                    <div class="info m-top">%</div>
+                </div>
+                <div id="descriptionSiete"></div>
+            </div>
+            <div class="disFlexRow">
+                <div class="termica info">
+                    <div class="iconoThree m-top">
+                        <object data="animated/drop.png"></object>
+                    </div>
+                    <div class="info m-top" id="humidity_dia_dos"></div>
+                    <div class="info m-top">%</div>
+                </div>
+                <div class="termica info">
+                    <div class="iconoThree m-top">
+                        <object data="animated/nubesmov.png"></object>
+                    </div>
+                    <div class="info m-top" id="wind_dia_dos"></div>
+                    <div class="info m-top">k/h</div>
+                </div>
+                <div class="">
+                    <img class="svgimg" id="icono-animado-nueve" src="" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="div17 fondoNegro">
+            <div class="m-l" id="dia-tres"></div>
+            <div class="termica info">
+                <div class="iconoThree">
+                    <object data="animated/thermometer.png"></object>
+                </div>
+                <div id="max3"></div>
+                <div class="mb-5" id="temp_max">°</div>
+                <div class=" info">/</div>
+                <div class="info" id="min3"></div>
+                <div class="mb-5" id="temp_min">°</div>
+            </div>
+            <img class="svgimg icono-dias" id="icono-animado-diez" src="" alt="">
+
+        </div>
+        <div class="div18 fondoNegro">
+            <div class="m-l" id="dia-cuatro"></div>
+            <div class="termica info">
+                <div class="iconoThree">
+                    <object data="animated/thermometer.png"></object>
+                </div>
+                <div id="max4"></div>
+                <div class="mb-5 " id="temp_max">°</div>
+                <div class=" info">/</div>
+                <div class="info" id="min4"></div>
+                <div class="mb-5" id="temp_min">°</div>
+            </div>
+            <img class="svgimg icono-dias" id="icono-animado-once" src="" alt="">
+
+        </div>
+        <div class="div19 fondoNegro">
+            <div class="m-l" id="dia-cinco"></div>
+            <div class="termica info">
+                <div class="iconoThree">
+                    <object data="animated/thermometer.png"></object>
+                </div>
+                <div id="max5"></div>
+                <div class="mb-5 " id="temp_max">°</div>
+                <div class=" info">/</div>
+                <div class="info" id="min5"></div>
+                <div class="mb-5" id="temp_min">°</div>
+            </div>
+            <img class="svgimg icono-dias" id="icono-animado-doce" src="" alt="">
+
+        </div>
+        <div class="div20 fondoNegro">
+            <div class="m-l" id="dia-seis"></div>
+            <div class="termica info">
+                <div class="iconoThree">
+                    <object data="animated/thermometer.png"></object>
+                </div>
+                <div id="max6"></div>
+                <div class="mb-5 " id="temp_max">°</div>
+                <div class=" info">/</div>
+                <div class="info" id="min6"></div>
+                <div class="mb-5" id="temp_min">°</div>
+            </div>
+            <img class="svgimg icono-dias" id="icono-animado-trece" src="" alt="">
+
+        </div>
+
+
+        <div class="div21 fondoNegro">
+            <div class="m-l" id="dia-siete"></div>
+            <div class="termica info">
+                <div class="iconoThree">
+                    <object data="animated/thermometer.png"></object>
+                </div>
+                <div id="max7"></div>
+                <div class="mb-5 " id="temp_max">°</div>
+                <div class=" info">/</div>
+                <div class="info" id="min7"></div>
+                <div class="mb-5" id="temp_min">°</div>
+            </div>
+            <img class="svgimg icono-dias" id="icono-animado-catorce" src="" alt="">
+
+        </div>
+        <div class="div22 fondoNegro">
+            <div class="m-l" id="dia-ocho"></div>
+            <div class="termica info">
+                <div class="iconoThree">
+                    <object data="animated/thermometer.png"></object>
+                </div>
+                <div id="max8"></div>
+                <div class="mb-5 " id="temp_max">°</div>
+                <div class=" info">/</div>
+                <div class="info" id="min8"></div>
+                <div class="mb-5" id="temp_min">°</div>
+            </div>
+            <img class="svgimg icono-dias" id="icono-animado-quince" src="" alt="">
+
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
