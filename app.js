@@ -493,23 +493,23 @@ const getDateHours = () => {
     let hora = hours.getHours();
     dianoche = hora
 
-    let timeUnoString = hours.getHours() + 3;
+    let timeUnoString = hours.getHours() + 4;
     timeUnoString > 24 ? horaUno.innerHTML = ('0' + timeUnoString).slice(1) - 24 : horaUno.innerHTML = ('0' + timeUnoString).slice(1)
     
     
-    let timeDosString = hours.getHours() + 6;
+    let timeDosString = hours.getHours() + 8;
     timeDosString > 24 ? horaDos.innerHTML = ('0' + timeDosString).slice(1) - 24 : horaDos.innerHTML = ('0' + timeDosString).slice(1);
     
-    let timeTresString = hours.getHours() + 9;
+    let timeTresString = hours.getHours() + 12;
     timeTresString > 24 ? horaTres.innerHTML = ('0' + timeTresString).slice(1) - 24 : horaTres.innerHTML = ('0' + timeTresString).slice(1);
     
-    let timeCuatroString = hours.getHours() + 12;
+    let timeCuatroString = hours.getHours() + 16;
     timeCuatroString > 24 ? horaCuatro.innerHTML = ('0' + timeCuatroString).slice(1) - 24 : horaCuatro.innerHTML = ('0' + timeCuatroString).slice(1);
     
-    let timeCincoString = hours.getHours() + 18;
+    let timeCincoString = hours.getHours() + 20;
     timeCincoString > 24 ? horaCinco.innerHTML = ('0' + timeCincoString).slice(1) - 24 : horaCinco.innerHTML = ('0' + timeCincoString).slice(1);
     
-    let timeSeisString = hours.getHours() + 21;
+    let timeSeisString = hours.getHours() + 24;
     timeSeisString > 24 ? horaSeis.innerHTML = ('0' + timeSeisString).slice(1) - 24 : horaSeis.innerHTML = ('0' + timeSeisString).slice(1);
 }
 
